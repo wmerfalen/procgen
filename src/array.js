@@ -12,3 +12,6 @@ Lib.end = (ar) => {
 Lib.endpluck = (ar,attr) => {
   return ar[ar.length-1][attr];
 };
+Lib.endrel = (ar,v) => {
+  return ar[ar.length-1 + v];
+};
