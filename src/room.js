@@ -15,6 +15,9 @@ Lib.at = (x,y) => {
     }
   }
 };
+Lib.mark = (_room_id,_type=true) => {
+  RoomMap[_room_id].mark = _type;
+};
 Lib.coords = () => {
   return Object.assign({},global_set.coords);
 };
@@ -151,7 +154,7 @@ Lib.walk = (from_id,dir,length) => {
   switch(dir){
     case 'n':
       next = () => {
-        c.y += 1;
+        c.y -= 1;
         return Object.assign({},c);
       };
       break;
@@ -163,7 +166,7 @@ Lib.walk = (from_id,dir,length) => {
       break;
     case 's':
       next = () => {
-        c.y -= 1;
+        c.y += 1;
         return Object.assign({},c);
       };
       break;
